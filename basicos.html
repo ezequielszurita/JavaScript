@@ -13,10 +13,30 @@
 
 <script>
 
-var hola = 'Hola Mundo'; //variable global
-let hello = "Hello World"; //para ambito local
+var hola = 'Hola Mundo'; //variable global, no respeta los bloques
+let hello = "Hello World"; //para ambito local, si respeta los bloques
 console.log(hola);
 console.log(hello);
+
+const PI= 3.1416;
+console.log(PI);
+
+const objeto = {
+    nombre:"Jon",
+    edad:35
+}
+
+const colores = ["blanco","negro","azul"];
+
+console.log(objeto);
+console.log(colores);
+
+objeto.correo = "ezequielszurita@gmail.com";
+colores.push("Anaranjado");
+
+console.log(objeto);
+console.log(colores);
+
 
 </script>
 
