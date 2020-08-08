@@ -1,43 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Fundamentos de JavaScript</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JS</title>
 </head>
 <body>
-    <h1>Fundamentos de JavaScript</h1>
-</body>
+    
+<h1>Curso de JS</h1>
+
 
 <script>
+/* Clase 7
+let a = 2;
+let b = new Number(1);
+let c = 7.19;
+let d = "5.6";
 
-var hola = 'Hola Mundo'; //variable global, no respeta los bloques
-let hello = "Hello World"; //para ambito local, si respeta los bloques
-console.log(hola);
-console.log(hello);
+console.log(typeof c,typeof d);
+console.log(a,b);
+console.log(c.toFixed(1)); //muestre con decimales bien
+console.log(c.toFixed(5));
+console.log(parseInt(c));
+console.log(parseFloat(c));
+console.log(a+b);
+console.log(c+ Number.parseInt(d));
+console.log(c + Number.parseFloat(d));
+*/
 
-const PI= 3.1416;
-console.log(PI);
+/* Clase 8
+ let verdadero = true;
+let falso = false;
 
-const objeto = {
-    nombre:"Jon",
-    edad:35
+console.log(verdadero,falso);
+console.log(typeof verdadero,typeof falso);
+*/
+ 
+/* Clase 9 Funciones
+
+ function estoEsUnaFuncion(){
+     console.log("Uno");
+     console.log("Dos");
+     console.log("Tres");
+ }
+
+ function unaFuncionQueDevuelveValor(){
+    console.log("Uno");
+    return 19; 
+    console.log("Dos");
+    console.log("Tres");
+    return "La funcion ha retornado una cadena de texto";
+
+ }
+
+//estoEsUnaFuncion();
+
+//let valorDeFuncion = unaFuncionQueDevuelveValor();
+//console.log(valorDeFuncion);
+
+function saludar(nombre= "desconocido",edad=0){
+    console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
 }
 
-const colores = ["blanco","negro","azul"];
+saludar("juan",24);
+saludar();
 
-console.log(objeto);
-console.log(colores);
+function funcionDeclarada(){
+    console.log("Esto es una funcion declarada, puede invocarse en cualquier parte de nustro codigo");
+};
 
-objeto.correo = "ezequielszurita@gmail.com";
-colores.push("Anaranjado");
+funcionDeclarada();
 
-console.log(objeto);
-console.log(colores);
+//funcion anonima, que no tien nombre
+const funcionExpresada=function(){
+     console.log("Esto es una funcion expresada a la que se le asigno el valor a la variable");
+};
 
+funcionExpresada;
+ */
 
 </script>
 
+</body>
 </html>
