@@ -79,7 +79,7 @@ const funcionExpresada=function(){
 funcionExpresada;
  */
 
- /* Clase 11 Arreglos */
+ /* Clase 11 Arreglos 
 
 const a = [];
 const b = [1,true,"Hola",["A","B","C",[1,2,3]]];
@@ -112,6 +112,58 @@ console.log(colores);
 colores.forEach(function(el,index){
     console.log(`<li id="${index}"> ${el}<li>`);
 });
+*/
+/* Clase 12 Objetos */
+
+let a = new String();
+
+//console.log(a);
+
+const b = {};
+console.log(b);
+
+const c = new Object();
+console.log(c);
+
+const jon = {
+nombre:"Jon",
+apellido:"Mircha",
+edad:24,
+pasatiempos:["Correr","Hacer Ejercicio","Dar"],
+soltero:false,
+contacto:{
+    email:"jog@gmail.com",
+    twitter:"@jose",
+    movil:"324234"
+},
+saludar:function() {
+    console.log(`Hola, esto es una funcion`)},
+
+decirminombre:function(){
+    console.log(`Hola, me llamo ${this.nombre} y mi apellido es ${this.apellido}`);
+}
+}
+
+console.log(jon);
+console.log(jon["nombre"]);
+console.log(jon["apellido"]);
+
+//dentro de un objeto a las variables se las llaman atributos o propiedades, y a las funciones se le llama metodo
+console.log(jon.nombre);
+console.log(jon.apellido);
+console.log(jon.edad);
+console.log(jon.soltero);
+console.log(jon.pasatiempos[1]);
+console.log(jon.contacto.twitter);
+
+jon.saludar();
+jon.decirminombre();
+
+console.log(Object.keys(jon)); //lista las llaves que componen al objeto
+console.log(Object.values(jon)); //lista los valores que componen al objeto
+console.log(jon.hasOwnProperty("nombre")); //evalua si el nombre de la propiedad se encuentra dentro del objeto
+console.log(jon.hasOwnProperty("colordepelo")); //evalua si el nombre de la propiedad se encuentra dentro del objeto
+
 
 </script>
 
