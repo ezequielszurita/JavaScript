@@ -79,6 +79,40 @@ const funcionExpresada=function(){
 funcionExpresada;
  */
 
+ /* Clase 11 Arreglos */
+
+const a = [];
+const b = [1,true,"Hola",["A","B","C",[1,2,3]]];
+console.log(a);
+console.log(b);
+console.log(b.length);
+console.log(b[2]); 
+console.log(b[3][2]); //muestro c
+console.log(b[3][3][0]); //muestro el 1
+
+const c = Array.of("X","Y","Z",9,8,7);
+console.log(c);
+
+const d = Array(100).fill(false); //permite rellenar automaticamente un arreglo de 100 posiciones e inicializadas  con false
+console.log(d);
+
+const e = new Array();
+console.log(e);
+
+const f = new Array(1,2,3,true,false);
+console.log(f);
+
+const colores = ["rojo","verde","azul"];
+console.log(colores);
+colores.push("Negro"); //metodo para agregar un elemento al array
+console.log(colores);
+colores.pop(colores); //metodo para quitar el ultimo elemento del array
+console.log(colores);
+
+colores.forEach(function(el,index){
+    console.log(`<li id="${index}"> ${el}<li>`);
+});
+
 </script>
 
 </body>
