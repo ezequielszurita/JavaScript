@@ -224,10 +224,93 @@ console.log(i); /*
 && and  con q uno no se cumpla es falso
 */
 
+/*
 console.log(!true);
 console.log(!false);
 console.log(9===9 || ("9"=== 9));
 console.log(9===9 && ("9"=== 9));
+*/
+
+/*Clase 14 Condicionales */
+
+let edad = 17;
+
+if(edad>17){
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+
+if(edad>=18){
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+if(edad<18){
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+if(edad<=17){
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+
+/*Dejame Dormir 0 - 5
+Buenos dias 6 -12
+Buenas Tardes 13 -18
+Buenas Noches 19 - 23*/
+
+let hora =19;
+
+if(hora >= 0 && hora <= 5){
+    console.log("Dejame Dormir");
+}else if(hora >= 6 && hora <= 12){
+    console.log("Buenos Dias");
+}else if(hora >=13 && hora <=18){
+    console.log("Buenas Tardes");
+}else{
+    console.log("Buenas Noches");
+}
+
+/*Operador Ternario */
+console.log("Operador Ternario");
+let eresMayor = (edad>=18)?"Eres mayor de edad":"Eres menor de edad";
+console.log(eresMayor);
+
+/*SWITCH CASE domingo0 lun 1 ... sab 6 */
+let dia = 6;
+
+switch (dia) {
+    case 0:
+    console.log("Domingo");
+    break;
+    case 1:
+    console.log("Lunes");
+    break;
+    case 2:
+    console.log("Martes");
+    break;
+    case 3:
+    console.log("Miercoles");
+    break;
+    case 4:
+    console.log("Jueves");
+    break;
+    case 5:
+    console.log("Viernes");
+    break;
+    case 6:
+    console.log("Sabado");        
+    break;
+    
+    default:
+    console.log("El dia no existe");
+    break;
+}
+
+
 
 </script>
 
