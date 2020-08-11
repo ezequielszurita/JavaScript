@@ -360,7 +360,7 @@ for (const caracter of cadena) {
 */
 
 /*Clase 16 Manejo de Errores*/
-
+/*
 try{
     console.log("En el Try se agrega el codigo a evaluar");
     noExiste;
@@ -381,6 +381,25 @@ try {
 } catch (error) {
     console.error(`Se produjo el siguiente error: ${error}`);    
 }
+*/
+/*Clase 17 Break & Continue*/
+
+const numero = [1,2,3,4,5,6,7,8,9,10];
+
+for(let i=0;i<numero.length;i++){
+    if(i===5){
+        break //salta todas las iteraciones y sale
+    }
+    console.log(numero[i]);
+}
+
+for(let i=0;i<numero.length;i++){
+    if(i===5){
+        continue; //salta una sola iteracion y vuelve de nuevo
+    }
+    console.log(numero[i]);
+}
+
 
 </script>
 
