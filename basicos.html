@@ -200,7 +200,7 @@ console.log(0 === false);
 */
 
 /*Incremento y Decremento*/
-let i = 2;
+//let i = 2;
 
 //i = i + 2;
 //i+= 3;
@@ -316,6 +316,7 @@ switch (dia) {
 */ 
 /*Clase 15 Ciclos*/
 
+/*
 let contador = 0;
 
 while (contador < 10){
@@ -356,8 +357,30 @@ let cadena= "Hola Mundo";
 for (const caracter of cadena) {
     console.log(caracter);
     }
+*/
 
+/*Clase 16 Manejo de Errores*/
 
+try{
+    console.log("En el Try se agrega el codigo a evaluar");
+    noExiste;
+    console.log("Un segundo mensaje en el try");
+} catch(error){ 
+    console.log("En el Try se agrega el codigo a evaluar");
+    console.log(error);
+} finally{
+    console.log("El bloque Finaly se ejecutara siempre al final de un bloque try-catch -----------------------");
+}
+
+try {
+ let numero = 10;
+ if(isNaN(numero)){
+    throw new Error("El caracter introducido no es un numero")
+ }   
+ console.log(numero*numero);
+} catch (error) {
+    console.error(`Se produjo el siguiente error: ${error}`);    
+}
 
 </script>
 
