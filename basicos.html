@@ -540,7 +540,8 @@ const perro = {
 perro.ladrar();
 */
 
-/*Clase 22 Prototipos*/
+/*Clase 22 Prototipos*/ /*y Clase 23 Herencia*/
+
 
 /*const animal = {
     nombre:"Snoopy",
@@ -573,17 +574,43 @@ function Animal(nombre,genero){
         console.log(`Hola me llamo ${this.nombre}`);
     }
 
-    const snoopy = new Animal("Snoopy","Macho",
-        lolabunny = new Animal("Lola Bunny","Hembra"));
+    //Herencia prototipica
+
+    function Perro(nombre,genero,tamanio){
+        this.super= Animal;
+        this.super(nombre,genero);
+        this.tamanio=tamanio;
+    }
+
+    //perro esta herando de animal 
+    Perro.prototype = new Animal();
+    Perro.prototype.constructor = Perro;
+    
+    //sobreescritura de metodos del prototipo padre en el hijo
+    Perro.prototype.sonar = function(){
+        console.log("Soy un perro y mi sonido es un ladrido");
+    }
+
+    Perro.prototype.ladrar = function(){
+        console.log("GUAU GUAU");
+    }
+
+    const snoopy = new Perro("Snoopy","Macho","Pequeño");
+    const lolabunny = new Animal("Lola Bunny","Hembra");
 
         console.log(snoopy);
         console.log(lolabunny);
 
         snoopy.sonar();
         snoopy.saludar();
+        snoopy.ladrar();
 
         lolabunny.sonar();
         lolabunny.saludar();
+
+
+
+
 
 </script>   
 
