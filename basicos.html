@@ -559,7 +559,7 @@ const animal2 = {
 
 console.log(animal);
 console.log(animal2);*/
-
+/*
 function Animal(nombre,genero){
     //Atributos
     this.nombre=nombre;
@@ -607,8 +607,51 @@ function Animal(nombre,genero){
 
         lolabunny.sonar();
         lolabunny.saludar();
+*/
+
+class Animal{
+    constructor(nombre,genero){
+    //Atributos
+    this.nombre=nombre;
+    this.genero=genero;
+    }
+    
+    //metodos agregados al prototipo de la funcion constructora
+    sonar(){
+        console.log("Hago sonidos por que estoy vivo");
+    }
+    saludar() {
+        console.log(`Hola me llamo ${this.nombre}`);
+    }
+}
 
 
+class Perro extends Animal{
+    constructor(nombre,genero,tamanio){
+        super(nombre,genero); //manda a llamar al contructuor de la clase padre
+        this.tamanio=tamanio;
+    }
+
+sonar(){
+    console.log("Soy un perro y mi sonido es un ladrido");
+}
+
+ladrar(){
+    console.log("GUAUU GUAUUU")
+}
+}
+
+const mimi = new Animal("Mimi","Hembra"),
+scooby = new Perro("Scooby","Macho","Gigante");
+
+console.log(mimi);
+console.log(scooby);
+
+mimi.saludar();
+mimi.sonar();
+scooby.saludar();
+scooby.sonar();
+scooby.ladrar();
 
 
 
