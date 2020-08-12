@@ -484,6 +484,7 @@ console.log(arr4);
 
 /*Clase 21 Arrow Functions*/
 
+/*
 const saludar = function(){
     console.log("Hola Saludar");
 }
@@ -522,11 +523,12 @@ funcionDeVariasLineas();
 const numeros=[1,2,3,4,5];
 numeros.forEach((el,index)=>console.log(`${el} esta en la posicion ${index}`));
 
-/*function Perro(){
-    console.log(this);
-}
+//function Perro(){
+//    console.log(this);
+//}
 
-Perro();*/
+
+Perro();
 
 const perro = {
     nombre:"jenai",
@@ -536,6 +538,52 @@ const perro = {
 }
 
 perro.ladrar();
+*/
+
+/*Clase 22 Prototipos*/
+
+/*const animal = {
+    nombre:"Snoopy",
+    sonar(){
+        console.log("Hago sonidos por que estoy vivo");
+    }
+}
+
+const animal2 = {
+    nombre:"Lola Bunny",
+    sonar(){
+        console.log("Hago sonidos por que estoy vivo");
+    }
+}
+
+console.log(animal);
+console.log(animal2);*/
+
+function Animal(nombre,genero){
+    //Atributos
+    this.nombre=nombre;
+    this.genero=genero;
+}
+
+    //metodos agregados al prototipo de la funcion constructora
+    Animal.prototype.sonar = function(){
+        console.log("Hago sonidos por que estoy vivo");
+    }
+    Animal.prototype.saludar = function(){
+        console.log(`Hola me llamo ${this.nombre}`);
+    }
+
+    const snoopy = new Animal("Snoopy","Macho",
+        lolabunny = new Animal("Lola Bunny","Hembra"));
+
+        console.log(snoopy);
+        console.log(lolabunny);
+
+        snoopy.sonar();
+        snoopy.saludar();
+
+        lolabunny.sonar();
+        lolabunny.saludar();
 
 </script>   
 
