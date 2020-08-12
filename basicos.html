@@ -452,7 +452,7 @@ dog.ladrar();
 */
 
 /*Clase 20 Parametros REST & Operadores Spread*/
-
+/*
 function sumar(a,b,...c){
     let resultado = a + b;
   
@@ -480,8 +480,64 @@ console.log(arr3);
 
 const arr4= [...arr1,...arr2];
 console.log(arr4);
+*/
 
-</script>
+/*Clase 21 Arrow Functions*/
+
+const saludar = function(){
+    console.log("Hola Saludar");
+}
+
+saludar();
+
+const saludo = ()=>console.log("Hola Saludo");
+
+saludo();
+
+const saludarr = (nombre)=>console.log(`Hola ${nombre}`);
+
+saludarr("irma");
+
+//la mejor manera
+const saludarrr = nombre=>console.log(`Hola ${nombre}`);
+saludarrr("irmaaaa");
+
+const sumar = function(a,b){
+    return a+b;
+}
+console.log(sumar(8,9));
+
+////la mejor manera
+const sumarr = (a,b) => a+b;
+console.log(sumarr(9,9));
+
+const funcionDeVariasLineas = ()=> {
+    console.log("Uno");
+    console.log("Dos");
+    console.log("Tres");
+}
+
+funcionDeVariasLineas();
+
+const numeros=[1,2,3,4,5];
+numeros.forEach((el,index)=>console.log(`${el} esta en la posicion ${index}`));
+
+/*function Perro(){
+    console.log(this);
+}
+
+Perro();*/
+
+const perro = {
+    nombre:"jenai",
+    ladrar(){
+        console.log(`${this.nombre} esta ladrando`);
+    }
+}
+
+perro.ladrar();
+
+</script>   
 
 </body>
 </html>
