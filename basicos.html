@@ -804,11 +804,46 @@ console.log(Math.sign(-7.8)); // devuelve si es negarivo -1 0 1
 console.log(Math.random()); //da un valor aleatorio entre 0 y 1 
 console.log(Math.random() *1000); //da un valor de 0 a 1000
 console.log(Math.round(Math.random() *1000)); //da un valor entero entre 0 a 1000
-console.log(Math());
-console.log(Math);
- 
+
+//Clase 29 Operador de Corto Circuito
+console.clear();
+
+/*Cortocircuito OR - cuando el valor de la izquierda en la expresion siempre pueda validar a true, es el valor que se cargara por defecto*/
 
 
+
+/*Cortocircuito AND - Cuando el valor de la izquierda en la expresion siempre pueda validar a false, es el valor que se cargara por defecto*/
+
+function saludar(nombre){
+    nombre = nombre || "Desconocido";
+    console.log(`Hola ${nombre}`);
+}
+
+saludar("Jon");
+saludar();
+
+saludar("cadena"||"Valor derecho");
+saludar(19||"Valor derecho");
+saludar(true||"Valor derecho");
+saludar([]||"Valor derecho");
+saludar({}||"Valor derecho");
+saludar(null||"Valor derecho");
+saludar(undefined||"Valor derecho");
+saludar(""||"Valor derecho");
+saludar(-2||"Valor derecho");
+saludar(0||"Valor derecho");
+
+
+saludar("cadena"&&"Valor derecho");
+saludar(19&&"Valor derecho");
+saludar(true&&"Valor derecho");
+saludar([]&&"Valor derecho");
+saludar({}&&"Valor derecho");
+saludar(null&&"Valor derecho");
+saludar(undefined&&"Valor derecho");
+saludar(""&&"Valor derecho");
+saludar(-2&&"Valor derecho");
+saludar(0&&"Valor derecho");
 </script>   
 
 </body>
