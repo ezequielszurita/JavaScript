@@ -759,6 +759,35 @@ let x = 3,
     
 console.assert(x<y,{x,y},pruebaXY); //metodo que sirve para prueba en consola
 
+console.clear();
+
+/*Clase 27 Object Date*/
+
+console.log(Date());
+
+let fecha = new Date();
+console.log(fecha);
+console.log(fecha.getDate());
+console.log(fecha.getDay());
+console.log(fecha.getMonth());
+console.log(fecha.getFullYear());
+console.log(fecha.getHours());
+console.log(fecha.getMinutes());
+console.log(fecha.getSeconds());
+console.log(`La hora es ${fecha.getHours()} ${fecha.getMinutes()} ${fecha.getSeconds()}`);
+console.log(`Milisegundos ${fecha.getMilliseconds()}`);
+console.log(fecha.toString());
+console.log(fecha.toDateString());
+console.log(fecha.toLocaleString());
+console.log(fecha.toLocaleDateString());
+console.log(fecha.toLocaleTimeString());
+console.log(fecha.getTimezoneOffset());
+console.log(fecha.getUTCDate());
+console.log(fecha.getUTCHours());
+console.log(Date.now()); //la fecha timestamp. creo q el tiempo que paso desde 1970 - se recomienda usar la libreria MOMENT JS
+
+let cumpleEze= new Date(1993,3,23);
+console.log(cumpleEze);
 
 </script>   
 
