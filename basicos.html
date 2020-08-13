@@ -630,6 +630,7 @@ class Perro extends Animal{
     constructor(nombre,genero,tamanio){
         super(nombre,genero); //manda a llamar al contructuor de la clase padre
         this.tamanio=tamanio;
+        this.raza=null;
     }
 
 sonar(){
@@ -639,7 +640,25 @@ sonar(){
 ladrar(){
     console.log("GUAUU GUAUUU")
 }
+
+//se puede instancia sin llamar a la clase
+static queEres(){
+    console.log("Los perros somos animales mamiferos,,,Soy un animal....sadasdasd");
 }
+
+//los setters y getters son metodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+get getRaza(){
+return this.raza;
+}
+
+set setRaza(raza){
+    this.raza = raza;
+}
+
+
+}
+
+Perro.queEres();
 
 const mimi = new Animal("Mimi","Hembra"),
 scooby = new Perro("Scooby","Macho","Gigante");
@@ -652,6 +671,13 @@ mimi.sonar();
 scooby.saludar();
 scooby.sonar();
 scooby.ladrar();
+// scooby.getRaza(); eso esta mal!!, no es un metodo
+console.log(scooby.getRaza); 
+scooby.setRaza= "Gran Danes";//metodo getter
+console.log(scooby.getRaza);  
+
+
+/*Clase 25 Métodos estáticos, getters y setters */
 
 
 
