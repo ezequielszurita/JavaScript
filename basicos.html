@@ -849,21 +849,33 @@ console.clear();
 
 /*Clase 30 Alert,confirm,prompt*/
 
-console.log(window);
+//console.log(window);
 
 /*
 window.alert("Hola esto es una alerta");
 window.confirm("Hola esto es una alerta");
 window.prompt("Hola esto es una alerta");
 */
-let alerta = alert("Hola esto es una alerta");
+
+/*let alerta = alert("Hola esto es una alerta");
 let confirmacion = confirm("Hola esto es una alerta de confirmacion");
 let aviso = prompt("Hola esto es un aviso");
 
 console.log(alerta);
 console.log(confirmacion);
 console.log(aviso);
+*/
 
+/*Clase 31 Expresiones regulares - buscar en mdn mozilla firefox*/
+
+let cadena = "Minim nisi lorem sint consequat. Sunt proident pariatur irure labore. Eiusmod aute fugiat lorem incididunt consectetur fugiat amet lorem sit qui excepteur quis tempor." 
+//let expReg = new RegExp("lorem","ig"); // la g sirve para buscar todas las coincidencias
+//console.log(expReg.test(cadena)); //comprubo si existe
+//console.log(expReg.exec(cadena)); //comprubo si existe
+
+let expReg2 = /lorem{1,}/ig;
+console.log(expReg2.test(cadena)); //comprubo si existe
+console.log(expReg2.exec(cadena)); //comprubo si existe
 
 
 </script>   
