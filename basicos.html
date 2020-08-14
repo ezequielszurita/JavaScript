@@ -868,14 +868,44 @@ console.log(aviso);
 
 /*Clase 31 Expresiones regulares - buscar en mdn mozilla firefox*/
 
-let cadena = "Minim nisi lorem sint consequat. Sunt proident pariatur irure labore. Eiusmod aute fugiat lorem incididunt consectetur fugiat amet lorem sit qui excepteur quis tempor." 
+//let cadena = "Minim nisi lorem sint consequat. Sunt proident pariatur irure labore. Eiusmod aute fugiat lorem incididunt consectetur fugiat amet lorem sit qui excepteur quis tempor." 
 //let expReg = new RegExp("lorem","ig"); // la g sirve para buscar todas las coincidencias
 //console.log(expReg.test(cadena)); //comprubo si existe
 //console.log(expReg.exec(cadena)); //comprubo si existe
 
+/*
 let expReg2 = /lorem{1,}/ig;
 console.log(expReg2.test(cadena)); //comprubo si existe
 console.log(expReg2.exec(cadena)); //comprubo si existe
+*/
+
+/*Clase 32 Funciones Anonimas Autoejecutables*/
+//lo usa mucho jquery
+
+//funcion clasica
+(function(){
+    console.log("Mi primer IIFE");
+})();
+
+(function(d,w,c){
+    console.log("Mi segunda IIFE");
+    console.log(d);
+    console.log(w);
+    c.log("Este es un console.log");
+})(document,window,console);
+
+//la crockford(js the god parts)
+((function(){
+    console.log("Version crockford");
+})())
+//version unaria
++function(){
+    console.log("Version unaria");
+}();
+//facebook
+!function(){
+    console.log("Version de Facebook");
+}();
 
 
 </script>   
