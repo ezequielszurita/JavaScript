@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+<body>
+    <h1>Ejercicios</h1>
+
+ 1)Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.<br><br>
+
+ 2)Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".<br><br>
+ 
+ 3)Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].<br><br>
+
+ 4)Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo. <br><br>
+
+<script>
+
+//Ejercicio 1 alternativa 1
+
+let pe = "Hola Mundo";
+let bandera = 0;
+let bandera2 = 0;
+
+function miFuncion(pe){
+    for(i=0;i<pe.length;i++){
+        bandera++;
+    }
+    console.log(`La cantidad de Caracteres incluyendo el espacio es ${[bandera]}`);
+    bandera=0;
+}
+
+miFuncion(pe);
+
+//Ejercicio 1 Alternativa 2
+
+function miFuncion2(pe){
+    console.log(`La cantidad de Caracteres incluyendo el espacio es ${[pe.length]}`);
+}
+
+miFuncion2(pe);
+
+//Ejercicio 2 
+
+let cortador=4;
+
+function CortarPalabra(pe,cortador){
+    let palabraNueva = pe.slice(0,cortador);
+    console.log(palabraNueva);
+};
+
+CortarPalabra(pe,cortador);
+
+//Ejercicio 3
+
+let condicionparacortar = " "; //es una cadena vacia, osea un espacio
+
+function CortarPalabrasPorEspacio(pe,condicionparacortar){
+    let palabraSeparada = pe.split(condicionparacortar);
+    console.log(palabraSeparada);
+}
+
+CortarPalabrasPorEspacio(pe,condicionparacortar);
+
+//Ejercicio 4
+
+let cantidaDeRepeticiones=3;
+let contador = 0;
+
+function RepetirTexto(pe,cantidaDeRepeticiones){
+    pe = pe.concat(" ");
+    console.log(pe.repeat(cantidaDeRepeticiones))
+    }
+
+RepetirTexto(pe,cantidaDeRepeticiones);
+
+</script>
+
+</body>
+</html>
