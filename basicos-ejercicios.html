@@ -9,15 +9,17 @@
     <h1>Ejercicios</h1>
 
  1)Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.<br><br>
-
  2)Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".<br><br>
- 
  3)Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].<br><br>
-
  4)Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo. <br><br>
+ 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".<br><br>
+ 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.<br><br>
+ 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.<br><br>
+ 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.<br><br>
 
 <script>
 
+/*
 //Ejercicio 1 alternativa 1
 
 let pe = "Hola Mundo";
@@ -75,6 +77,65 @@ function RepetirTexto(pe,cantidaDeRepeticiones){
     }
 
 RepetirTexto(pe,cantidaDeRepeticiones);
+*/
+
+//Ejercicio 5
+
+function invertir(cadena= ""){
+    if(!cadena){
+        console.warn("Debe ingresar una cadena para invertir");
+    }else{
+        console.info(`La Palabra ${cadena} se invierte como ${cadena.split('').reverse().join('')}`);
+    }
+}
+
+invertir("Hola Mundo");
+
+//Ejercicio 6
+function contarTextoRepetido(cadena="",palabraBuscar){
+    if(!palabraBuscar && !cadena)console.warn("Debe Ingresar una cadena y una palabra para buscar coincidencias")
+    else{
+        if(!palabraBuscar)console.warn("Debe ingresar una palabra para buscar su coincidencia");
+    else{
+        if(!cadena)console.warn("Debe ingresar una cadena para evaluar las coincidencias");
+        else{
+            var arrayCadena = cadena.split(" "); //divido en arrays y luego evaluo
+            var bandera=0; 
+            for (i = 0; i < arrayCadena.length; i++) {
+                if (arrayCadena[i] == palabraBuscar) bandera++
+            }
+            console.log(`Se encontro la palabra ${palabraBuscar} ${bandera} veces`);}}}}
+    
+contarTextoRepetido("hola mundo adios mundo","mundo");
+
+//Ejercicio 7
+function palindromo(cadena=""){
+    if(!cadena)console.warn("Debe ingresar una palabra para evaluar si es palindromo");
+    else{ 
+    cadena= cadena.toUpperCase();
+    cadena2= cadena.split('').reverse().join('');
+    if(cadena==cadena2)console.info(`La Palabra ${cadena} es un palindromo`);
+    else console.info(`La Palabra ${cadena} NO es un palindromo`);
+}}
+palindromo("Salas");
+
+//Ejercicio 8
+function eliminarPatron(cadena="",patron=""){
+    if(!patron && !cadena)console.warn("Debe Ingresar una cadena y un patron para buscar coincidencias")
+    else{
+        if(!patron)console.warn("Debe ingresar un patron para buscar su coincidencia");
+    else{
+        if(!cadena)console.warn("Debe ingresar una cadena para evaluar las coincidencias");
+        else{
+            var cadenavector = cadena.split(",");
+            var nuevacadena = "";
+                        for (let i = 0; i < cadenavector.length; i++) {
+            nuevacadena += cadenavector[i].replace(patron, "");}
+            console.log(nuevacadena);
+            }}}}
+
+eliminarPatron("xyz1 , xyz2 , xyz3 , xyz4 , xyz5", "xyz");
+
 
 </script>
 
