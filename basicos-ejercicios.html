@@ -22,6 +22,9 @@
  12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.<br><br>
  13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.<br><br>
  14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.<br><br>
+ 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.<br><br>
+ 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.<br><br>
+ 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).<br><br>
 <script>
 
 /*
@@ -140,6 +143,7 @@ function eliminarPatron(cadena="",patron=""){
 eliminarPatron("xyz1 , xyz2 , xyz3 , xyz4 , xyz5", "xyz");
 */
 //Ejercicio 9
+/*
 const numeroAleatorio=(min,max)=>{
 (!min||!max)
     ? console.warn("Debe ingresar un numero que indique el minimo y/o un numero que indique el maximo")
@@ -181,12 +185,13 @@ Funcfactorial(2);
 
 console.clear();
 
+//Ejercicio 12
 const EsPrimo = (numero=undefined) =>{
 if (numero === undefined) console.warn("Debe ingresar un numero para factoriar")
 if (typeof numero !="number") return console.error(`El valor ${numero} No es un numero`);
 if (numero === 0 || numero ===1 || numero===4) return console.error(`El valor ${numero} No es un numero primo`);
 if (Math.sign(numero)=== -1) return console.error("El numero no puede ser negativo");   
-for (let i = 2; i < numero / 2; i++) {
+for (let i = 2; i < numero / 2; i++) { //NO TIENE CASO DIVIDIRLO SOBRE 1, POR ESO INICIA EN 2
 		if (numero % i == 0) return console.error(`El valor ${numero} No es un numero primo`);;
 	}
 	return console.info(`El valor ${numero}  es un numero primo`);;
@@ -196,6 +201,7 @@ EsPrimo(6);
 
 console.clear();
 
+//Ejercicio 13
 const EsPar = (numero=undefined) =>{
 if (numero === undefined) console.warn("Debe ingresar un numero para evaluar")
 if (typeof numero !="number") return console.error(`El valor ${numero} No es un numero`);
@@ -206,6 +212,7 @@ EsPar(29);
 
 console.clear();
 
+//Ejercicio 14
 const convertirTemp = (numero=0,grados="C") =>{
 if(!numero && !grados)console.error("Debe Ingresar un numero y la temperatura en grados")
 if (numero === undefined) console.error("Debe ingresar un numero para convertir su temperatura")
@@ -223,8 +230,60 @@ if(grados = "F"){
 }
 
 convertirTemp(40,"f");
+*/
+//Ejercicio 15 
+const convertirNumeros = ( valor = '', unidad = '') => {
+
+if ( !valor || !unidad ) return console.error("No has ingresado los datos de número y unidad");
+if (valor === undefined) return console.warn(" No ingresaste un numero");
+if (typeof unidad !== "number") return console.error(`El dato "${unidad}" ingresado, No es un numero`);
+
+// Decimal a Binadio
+let dToBinario  = ( valor.toString(unidad));
+
+// Binario a Decimal
+let btoDecimal = parseInt(valor, unidad);
 
 
+const resultado = ( typeof valor !== 'number' )
+                    ? console.info(`El número binario ${valor}, el valor decimal es: ${btoDecimal}`)
+                    : console.info(`El número decimal ${valor}, el valor dinario es: ${dToBinario}`);
+return resultado;
+}
+
+convertirNumeros("100",2);
+
+
+const aplicarDesc = (monto=undefined,descuento=undefined)=>{
+if ( !monto || !descuento ) return console.error("No has ingresado los datos de monto y descuento");
+if (monto === undefined ) return console.warn("La variable de monto no es un numero");
+if (descuento === undefined) return console.warn(" La variable de descuento no es un numero");
+if (typeof descuento == "number" && typeof monto =="number"){
+    DescTotal = monto*descuento*0.01;
+    montoTotal= monto-DescTotal;
+    console.log(`El monto total con descuento sera de ${montoTotal}`);
+}}
+
+aplicarDesc(1000,20);
+
+//Ejercicio 16
+const calcularanios = (fecha = undefined)=>{
+    if (fecha === undefined) return console.warn("Debes ingresar una fecha");
+
+    if(!fecha instanceof Date) return console.error("El valor que ingresaste no es una fecha valida");
+
+    let hoymenosfecha = new Date().getTime() - fecha.getTime(),
+        aniosenems = 1000 * 60 * 60 * 24 * 365
+    aniosenhumanos = Math.floor(hoymenosfecha/aniosenems);
+    
+    return(Math.sign(aniosenhumanos)===-1)
+    ? console.info(`Faltan ${Math.abs(aniosenhumanos)} años para el ${fecha.getFullYear()}`)
+    : (Math.sign(aniosenhumanos)===1)
+        ? console.info(`Han pasado ${aniosenhumanos} años, desde ${fecha.getFullYear()}`)
+        : console.info(`Estamos en el año actual ${fecha.getFullYear()}`)
+    }
+
+calcularanios(new Date(1993,3,23));
 
 </script>
 
