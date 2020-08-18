@@ -25,6 +25,9 @@
  15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.<br><br>
  16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.<br><br>
  17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).<br><br>
+ 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.<br><br>
+ 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.<br><br>
+ 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.<br><br>
 <script>
 
 /*
@@ -232,6 +235,7 @@ if(grados = "F"){
 convertirTemp(40,"f");
 */
 //Ejercicio 15 
+/*
 const convertirNumeros = ( valor = '', unidad = '') => {
 
 if ( !valor || !unidad ) return console.error("No has ingresado los datos de número y unidad");
@@ -253,7 +257,7 @@ return resultado;
 
 convertirNumeros("100",2);
 
-
+//Ejercicio 16
 const aplicarDesc = (monto=undefined,descuento=undefined)=>{
 if ( !monto || !descuento ) return console.error("No has ingresado los datos de monto y descuento");
 if (monto === undefined ) return console.warn("La variable de monto no es un numero");
@@ -266,7 +270,7 @@ if (typeof descuento == "number" && typeof monto =="number"){
 
 aplicarDesc(1000,20);
 
-//Ejercicio 16
+//Ejercicio 17
 const calcularanios = (fecha = undefined)=>{
     if (fecha === undefined) return console.warn("Debes ingresar una fecha");
 
@@ -284,6 +288,40 @@ const calcularanios = (fecha = undefined)=>{
     }
 
 calcularanios(new Date(1993,3,23));
+*/
+
+//Ejercicio 18
+const calcularVocalesyConsonantes = (cadena="")=>{
+    
+    var numeroVocales = cadena.match(/[aeiou]/gi).length
+    var numerodeConsonantes = cadena.match(/[zxcvbnmsdfghjklqwrtyp]/gi).length
+    console.log(`La palabra ${cadena} tiene ${numeroVocales} Vocales y ${numerodeConsonantes} Consonantes`)
+}
+
+calcularVocalesyConsonantes("AAaeeoooui qwrtyhgfvb");
+
+//Ejercicio 19
+const validarnumbre = (cadena="")=>
+    (!cadena)
+    ? console.warn("Debe ingresar un nombre para evaluar")
+    : (cadena.match(/^[a-z, .'-]+$/i))
+        ? console.log(`El nombre ${cadena} es un nombre valido`)
+        : console.warn(`El nombre ${cadena} es un nombre invalido`)
+
+validarnumbre("Jonathan Mircha");
+
+//Ejercicio 20
+
+const validaremail = (cadena="")=>
+(!cadena)
+    ? console.warn("Debe ingresar un Email para Evaluar")
+    : (cadena.match(/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i))
+        ? console.log(`El Email ${cadena} es valido`)
+        : console.warn(`El Email ${cadena} es invalido`)
+
+validaremail("asdasd@gmail.com");
+
+//Ejercicio 21
 
 </script>
 
