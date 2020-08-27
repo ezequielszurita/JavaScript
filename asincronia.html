@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia en Javascript</title>
+</head>
+<body>
+
+<h1>Asincronia en Javascript</h1>
+
+
+<script>
+
+    //Clase 44. Temporizadores(SetTimeOut & SetInterval)
+/*
+console.log("inicio");
+
+setTimeout(() => {
+    console.log("Ejecutando un SetTimeOut, esto se ejecuta una sola vez")
+}, 1000);
+
+
+setInterval(() => {
+    console.log("Ejecutando un SetInterval, esto se ejecuta cada cierto intervalo de tiempo")
+}, 1000);
+*/
+/*
+let temporizador = setInterval(()=>{
+    console.log(new Date().toLocaleTimeString())
+},1000);
+
+clearTimeout(temporizador);
+console.log("Despues del clearInterval")
+*/
+
+//Clase 45 Asincronia y Event Loop
+/*Procesamiento Single thread y Multi thread.
+Operaciones de CPU y Operaciones de I/O
+Operaciones Concurrentes y Paralelas
+Operaciones Bloqueantes y No Bloqueantes
+Operaciones Sincronas y Asincronas*/
+ 
+
+//Codigo Sincrono Bloqueante
+
+(()=> {
+console.log("Codigo Sincrono");
+console.log("Inicio");
+
+function dos(){
+    console.log("Dos");
+}
+
+function uno(){
+    console.log("Uno");
+    dos();
+    console.log("Tres");
+}
+
+    uno();
+    console.log("Fin");
+
+    console.log("******************");
+})();
+
+//Codigo Asincrono No Bloqueante
+
+(()=> {
+    console.log("Codigo Asincrono");
+console.log("Inicio");
+
+function dos(){
+    setTimeout(function(){
+    console.log("Dos");
+},1000)}
+
+function uno(){
+    setTimeout(function(){
+    console.log("Uno");
+    },0);
+    dos();
+    console.log("Tres");
+}
+
+    uno();
+    console.log("Fin");
+})();
+
+//http://latentflip.com/loupe/
+
+
+
+</script>
+</body>
+</html>
