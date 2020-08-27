@@ -1,96 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asincronia en Javascript</title>
 </head>
+
 <body>
 
-<h1>Asincronia en Javascript</h1>
+    <h1>Asincronia en Javascript</h1>
 
 
-<script>
+    <script>
+        //Clase 44. Temporizadores(SetTimeOut & SetInterval)
+        /*
+        console.log("inicio");
 
-    //Clase 44. Temporizadores(SetTimeOut & SetInterval)
-/*
-console.log("inicio");
-
-setTimeout(() => {
-    console.log("Ejecutando un SetTimeOut, esto se ejecuta una sola vez")
-}, 1000);
-
-
-setInterval(() => {
-    console.log("Ejecutando un SetInterval, esto se ejecuta cada cierto intervalo de tiempo")
-}, 1000);
-*/
-/*
-let temporizador = setInterval(()=>{
-    console.log(new Date().toLocaleTimeString())
-},1000);
-
-clearTimeout(temporizador);
-console.log("Despues del clearInterval")
-*/
-
-//Clase 45 Asincronia y Event Loop
-/*Procesamiento Single thread y Multi thread.
-Operaciones de CPU y Operaciones de I/O
-Operaciones Concurrentes y Paralelas
-Operaciones Bloqueantes y No Bloqueantes
-Operaciones Sincronas y Asincronas*/
- 
-
-//Codigo Sincrono Bloqueante
-
-(()=> {
-console.log("Codigo Sincrono");
-console.log("Inicio");
-
-function dos(){
-    console.log("Dos");
-}
-
-function uno(){
-    console.log("Uno");
-    dos();
-    console.log("Tres");
-}
-
-    uno();
-    console.log("Fin");
-
-    console.log("******************");
-})();
-
-//Codigo Asincrono No Bloqueante
-
-(()=> {
-    console.log("Codigo Asincrono");
-console.log("Inicio");
-
-function dos(){
-    setTimeout(function(){
-    console.log("Dos");
-},1000)}
-
-function uno(){
-    setTimeout(function(){
-    console.log("Uno");
-    },0);
-    dos();
-    console.log("Tres");
-}
-
-    uno();
-    console.log("Fin");
-})();
-
-//http://latentflip.com/loupe/
+        setTimeout(() => {
+            console.log("Ejecutando un SetTimeOut, esto se ejecuta una sola vez")
+        }, 1000);
 
 
+        setInterval(() => {
+            console.log("Ejecutando un SetInterval, esto se ejecuta cada cierto intervalo de tiempo")
+        }, 1000);
+        */
+        /*
+        let temporizador = setInterval(()=>{
+            console.log(new Date().toLocaleTimeString())
+        },1000);
 
-</script>
+        clearTimeout(temporizador);
+        console.log("Despues del clearInterval")
+        */
+
+        //Clase 45 Asincronia y Event Loop
+        /*Procesamiento Single thread y Multi thread.
+        Operaciones de CPU y Operaciones de I/O
+        Operaciones Concurrentes y Paralelas
+        Operaciones Bloqueantes y No Bloqueantes
+        Operaciones Sincronas y Asincronas
+
+        JS usa un modelo asincrono y no bloqueante con un loop de eventos implementado en un solo hilo,(single thread) para operaciones de entradas y salida(i/o)
+        */
+
+
+        //Codigo Sincrono Bloqueante
+
+        /*
+        (()=> {
+        console.log("Codigo Sincrono");
+        console.log("Inicio");
+
+        function dos(){
+            console.log("Dos");
+        }
+
+        function uno(){
+            console.log("Uno");
+            dos();
+            console.log("Tres");
+        }
+
+            uno();
+            console.log("Fin");
+
+            console.log("******************");
+        })();
+
+        //Codigo Asincrono No Bloqueante
+
+        (()=> {
+            console.log("Codigo Asincrono");
+        console.log("Inicio");
+
+        function dos(){
+            setTimeout(function(){
+            console.log("Dos");
+        },1000)}
+
+        function uno(){
+            setTimeout(function(){
+            console.log("Uno");
+            },0);
+            dos();
+            console.log("Tres");
+        }
+
+            uno();
+            console.log("Fin");
+        })();
+
+        //http://latentflip.com/loupe/
+
+        */
+        //Clase 46 Callbacks
+
+        function cuadradoCallback(value, callback) {
+            setTimeout(() => {
+                callback(value, value * value);
+            }, 0 | Math.random() * 1000);
+        }
+
+        cuadradoCallback(0, (value, result) => {
+            console.log("Inicia CallBack");
+            console.log(`Callback: ${value}, ${result}`);
+            cuadradoCallback(1, (value, result) => {
+                console.log(`Callback: ${value}, ${result}`);
+                cuadradoCallback(2, (value, result) => {
+                    console.log(`Callback: ${value}, ${result}`);
+                    cuadradoCallback(3, (value, result) => {
+                        console.log(`Callback: ${value}, ${result}`);
+                        cuadradoCallback(4, (value, result) => {
+                            console.log(`Callback: ${value}, ${result}`);
+                            cuadradoCallback(5, (value, result) => {
+                                console.log(
+                                    `Callback: ${value}, ${result}`);
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    </script>
 </body>
+
 </html>
