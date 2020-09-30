@@ -47,6 +47,7 @@
 
         console.log(Object.getOwnPropertySymbols(persona));
         console.clear();
+        //console.clear();
         //Clase 50 Sets
 
         const set = new Set([1, 2, 3, 3, 4, 5, true, false, false, {}, {}, "hola", "HOLA"]);
@@ -87,6 +88,50 @@
 
         set2.clear(); //borro los valores de set2
         console.log(set2)
+        console.clear();
+
+        //Clase 51 Maps
+
+        const mapa = new Map();
+        mapa.set("nombre", "Jon");
+        mapa.set("apellido", "Mircha");
+        mapa.set("edad", "23");
+
+        console.log(mapa); //objeto iterador
+        console.log(mapa.size); //cantidad de elementos
+        console.log(mapa.has("correo")); //existe la llave correo?mostrala
+        console.log(mapa.has("nombre")); //existe la llave correo?mostrala
+        console.log(mapa.get("nombre")); //obtener el valor de nombre
+        mapa.set("nombre", "Jonatan Mircha");
+        console.log(mapa.get("nombre"));
+        mapa.delete("apellido"); //eliminar elementos
+
+        mapa.set(19, "diecinueve");
+        mapa.set(false, "falso");
+        mapa.set({}, {});
+
+
+        console.log(mapa);
+
+        for (let [key, value] of mapa) {
+            console.log(`Llave: ${key}, valor: ${value}`);
+        }; //recorrer mapa
+
+
+        const mapa2 = new Map([
+            ["nombre", "kenay"],
+            ["edad", 7],
+            ["animal", "perro"],
+            [null, "nulo"]
+        ]);
+
+        console.log(mapa2);
+
+        const llavesmapa2 = [...mapa2.keys()];
+        const valoresmapa2 = [...mapa2.values()];
+
+        console.log(llavesmapa2);
+        console.log(valoresmapa2);
     </script>
 
 </body>
