@@ -218,7 +218,7 @@
        */
 
     //Clase 53 Iterables & Iterators
-
+    /*
     const iterable = [1, 2, 3, 4, 5]; //puede ser tambien un string cadena de texto
     //const iterable = "hola mundo" //puede ser tambien un string cadena de texto
     //const iterable = new Set([1, 2, 4, 3, 3, 1, 4, 5, 6, 4, 5]);
@@ -235,12 +235,63 @@
      console.log(iterador.next)();
      console.log(iterador.next)();
      console.log(iterador.next)();*/
+    /*
+        let next = iterador.next();
 
-    let next = iterador.next();
+        while (!next.done) {
+          console.log(next.value);
+          next = iterador.next();
+        }
+    */
+    //Clase 54 - Generators 
 
-    while (!next.done) {
-      console.log(next.value);
-      next = iterador.next();
+    function* iterable() {
+      yield "hola";
+      console.log("Hola Consola");
+      yield "hola2";
+      console.log("Seguimos con mas instrucciones de nuestro codigo");
+      yield "hola3";
+      yield "hola4";
+    }
+
+    let iterador = iterable();
+    /* console.log(iterador.next)();
+     console.log(iterador.next)();
+     console.log(iterador.next)();
+     console.log(iterador.next)();
+     console.log(iterador.next)();
+     console.log(iterador.next)();*/
+
+    for (let y of iterador) {
+      console.log(y);
+    }
+
+    const array = [...iterable()];
+    console.log(array);
+
+    function cuadrado(valor) {
+      setTimeout(() => {
+        return console.log({
+          valor,
+          resultado: valor * valor
+        });
+      }, Math.random() * 1000);
+    }
+
+    function* generador() {
+      console.log("Inicia Generator");
+      yield cuadrado(1)
+      yield cuadrado(2)
+      yield cuadrado(3)
+      yield cuadrado(4)
+      yield cuadrado(5)
+      yield cuadrado(0)
+      console.log("Termina Generator");
+    }
+
+    let gen = generador();
+    for (let y of gen) {
+      console.log(y);
     }
   </script>
 </body>
