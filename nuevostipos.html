@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Nuevos Tipos de Datos</title>
+    <title>This en Javascript</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
-    <h1>Nuevos Tipos de Datos en Javascript</h1>
+    <h1>This en Javascript</h1>
     <p>lorem</p>
     <p>lorem</p>
     <p>lorem</p>
@@ -349,6 +349,7 @@
       */
       //Clase 57 . this
 
+      /*
       console.log(this);
       console.log(window);
       console.log(this === window);
@@ -402,6 +403,46 @@
 
       let jon = new Persona("Jon");
       jon();
+      */
+
+      //Clase 58 Call,Apply,bind
+
+      console.log(this);
+      this.lugar = "Global";
+
+      function saludar(saludo, aQuien) {
+        console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+      }
+
+      saludar("Hola", "Kanei");
+
+      const obj = {
+        lugar: "Contexto Objeto",
+      };
+
+      saludar.call(obj, "Hola", "Jon");
+      saludar.call(null, "Hola", "Jon");
+      saludar.call(this, "Hola", "Jon");
+      saludar.apply(obj, ["Adios", "Mircha"]);
+      saludar.apply(null, ["Adios", "Mircha"]);
+      saludar.apply(this, ["Adios", "Mircha"]);
+
+      this.nombre = "Window";
+      const persona = {
+        nombre: "jon",
+        saludar: function () {
+          console.log(`Hola ${this.nombre}`);
+        },
+      };
+
+      persona.saludar();
+
+      const otraPersona = {
+        saludar: persona.saludar.bind(persona), //el bind enlaza el nombre de persona con otra persona
+        saludar: persona.saludar.bind(this), //el bind enlaza window de persona con otra persona
+      };
+
+      otraPersona.saludar();
     </script>
   </body>
 </html>
