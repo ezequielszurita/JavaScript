@@ -9,7 +9,7 @@
 
       hablar(texto);*/
     //Clase 61 - Dom-Introducción
-
+    /*
     console.log("****************Elementos del Documento ****************");
     console.log(window.document);
     console.log(document);
@@ -27,4 +27,21 @@
     setTimeout(() => {
         console.log(document.getSelection().toString());
     }, 3000);
-    document.write("<h2>Hola mundo desde el DOM</h2>")
+    document.write("<h2>Hola mundo desde el DOM</h2>")*/
+
+    //Clase 62-DOM: Nodos, Elementos y Selectores
+
+    console.log(document.getElementsByTagName("li")); //viejo
+    console.log(document.getElementsByClassName("card")); //viejo
+    console.log(document.getElementsByName("nombre")); //viejo
+    console.log(document.getElementById("menu")); //se debe seguir usando
+    console.log(document.querySelector("#menu")); //mas nuevo, pero mas lento q elementbyid
+    console.log(document.querySelector("a")); //solo trae la primera referncia a
+    console.log(document.querySelectorAll("a")); // trae todos las referncia a
+    console.log(document.querySelectorAll("a").length); //trae la cantidad
+    document.querySelectorAll("a").forEach(el => console.log(el));
+    console.log(document.querySelector(".card"));
+    console.log(document.querySelectorAll(".card"));
+    console.log(document.querySelectorAll(".card")[2]);
+    console.log(document.querySelector("#menu li"));
+    console.log(document.querySelectorAll("#menu li"));
