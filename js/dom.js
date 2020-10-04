@@ -31,6 +31,7 @@
 
     //Clase 62-DOM: Nodos, Elementos y Selectores
 
+    /*
     console.log(document.getElementsByTagName("li")); //viejo
     console.log(document.getElementsByClassName("card")); //viejo
     console.log(document.getElementsByName("nombre")); //viejo
@@ -45,3 +46,35 @@
     console.log(document.querySelectorAll(".card")[2]);
     console.log(document.querySelector("#menu li"));
     console.log(document.querySelectorAll("#menu li"));
+    */
+    //Clase 63 -DOM: Atributos y Data-Attributes
+    console.log(document.documentElement.lang);
+    console.log(document.documentElement.getAttribute("lang"));
+    console.log(document.querySelector(".link-dom").href);
+    console.log(document.querySelector(".link-dom").getAttribute("href"));
+
+    document.documentElement.lang = "en";
+    console.log(document.documentElement.lang);
+    document.documentElement.setAttribute("lang", "es-MX");
+    console.log(document.documentElement.lang);
+
+    const $linkDOM = document.querySelector(".link-dom"); //es una buena practica ponerle $ a las variables del dom
+
+
+    $linkDOM.setAttribute("target", "_blank");
+    $linkDOM.setAttribute("rel", "noopener"); //no hay dependecia entre la ventana actual y la q se va abrir
+    $linkDOM.setAttribute("href", "https://www.youtube.com/jonmircha");
+    console.log($linkDOM.hasAttribute("rel"));
+    $linkDOM.removeAttribute("rel");
+    console.log($linkDOM.hasAttribute("rel"));
+
+    // Data-Attributes
+    console.log($linkDOM.getAttribute("data-description"));
+    console.log($linkDOM.dataset.description);
+    $linkDOM.setAttribute("data-description", "Modelo de Objeto del Documento"); //manera a
+    console.log($linkDOM.dataset.description);
+    $linkDOM.dataset.description = "Subscribete a mi canal y compartelo" //manera b
+    console.log($linkDOM.dataset.description);
+    console.log($linkDOM.hasAttribute("data-id"));
+    console.log($linkDOM.removeAttribute("data-id"));
+    console.log($linkDOM.hasAttribute("data-id"));
