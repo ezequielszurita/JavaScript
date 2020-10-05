@@ -81,7 +81,7 @@
     console.log($linkDOM.hasAttribute("data-id"));*/
 
 //Clase 64. DOM: Estilos y Variables CSS
-
+/*
 const $linkDOM = document.querySelector(".link-dom"); //es una buena practica ponerle $ a las variables del dom
 console.log($linkDOM.style);
 console.log($linkDOM.getAttribute("style")); //este es el q me gusta mas para ver propiedades
@@ -116,3 +116,26 @@ $body.style.color = varYellowColor;
 $html.style.setProperty("--dark-color", "#000");
 varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 $body.style.setProperty("background-color", varDarkColor);
+*/
+//Clase 65 - DOM: Clases CSS
+const $card = document.querySelector(".card");
+
+console.log($card);
+console.log($card.className);
+console.log($card.classList);
+console.log($card.classList.contains("rotate-45")); //consulto si tiene esa clase
+$card.classList.add("rotate-45");
+console.log($card.classList.contains("rotate-45")); //consulto si tiene esa clase
+console.log($card.className);
+console.log($card.classList);
+$card.classList.remove("rotate-45");
+console.log($card.classList.contains("rotate-45")); //consulto si tiene esa clase
+$card.classList.toggle("rotate-45"); //evalua si la clase tiene rotate, si no tiene la agrega, pero si la tiene, la elimina
+console.log($card.classList.contains("rotate-45")); //consulto si tiene esa clase
+$card.classList.toggle("rotate-45"); //evalua si la clase tiene rotate, si no tiene la agrega, pero si la tiene, la elimina
+console.log($card.classList.contains("rotate-45")); //consulto si tiene esa clase
+$card.classList.toggle("rotate-45"); //evalua si la clase tiene rotate, si no tiene la agrega, pero si la tiene, la elimina
+$card.classList.replace("rotate-45", "rotate-135"); // reemplaza la clase 45 por 135
+$card.classList.add("opacity-80", "sepia"); //agrega varias clases al mismo tiempo, remove funciona igual
+$card.classList.remove("opacity-80", "sepia");
+$card.classList.toggle("opacity-80", "sepia");
