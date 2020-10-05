@@ -118,6 +118,7 @@ varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 $body.style.setProperty("background-color", varDarkColor);
 */
 //Clase 65 - DOM: Clases CSS
+/*
 const $card = document.querySelector(".card");
 
 console.log($card);
@@ -139,3 +140,24 @@ $card.classList.replace("rotate-45", "rotate-135"); // reemplaza la clase 45 por
 $card.classList.add("opacity-80", "sepia"); //agrega varias clases al mismo tiempo, remove funciona igual
 $card.classList.remove("opacity-80", "sepia");
 $card.classList.toggle("opacity-80", "sepia");
+*/
+//Clase 66. DOM: Texto y HTML
+const $whatIsDOM = document.getElementById("que-es");
+
+let text = `
+    <p>
+    El Modelo de Objetos del Documento (<b><i>DOM - Document Object Model </i></b>) es un                    
+API para documentos HTML y XML.
+    </p>
+    <p>
+    Éste provée una representación estructural del documento, permitiendo modificar su contenido y presentación visual mediante código JS.
+    </p>
+    <p>
+        <mark> El DOM no es parte de la especificación de JavaScript, es una API para los navegadores.</mark>
+    </p>`;
+
+//$whatIsDOM.innerText = text; //se usaba en IE - no reconoce las etiquetas html - no es parte del estandar
+$whatIsDOM.textContent = text; // es el estandar - no interpreta las etiquetas html
+$whatIsDOM.innerHTML = text; // este si interpreta el html
+$whatIsDOM.outerHTML = text; //reemplaza todo complemtamente, no es un paraffaro dentro de otro. ahora es solo uno
+
