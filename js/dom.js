@@ -1,6 +1,6 @@
-    //Clase 60 - WEB APIs
+//Clase 60 - WEB APIs
 
-    /*  console.log(window);
+/*  console.log(window);
       console.log(document);
 
       const texto = "Hola, soy tu amigo y docente digital, Jonatan Mircha";
@@ -8,8 +8,8 @@
           speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
 
       hablar(texto);*/
-    //Clase 61 - Dom-Introducción
-    /*
+//Clase 61 - Dom-Introducción
+/*
     console.log("****************Elementos del Documento ****************");
     console.log(window.document);
     console.log(document);
@@ -29,9 +29,9 @@
     }, 3000);
     document.write("<h2>Hola mundo desde el DOM</h2>")*/
 
-    //Clase 62-DOM: Nodos, Elementos y Selectores
+//Clase 62-DOM: Nodos, Elementos y Selectores
 
-    /*
+/*
     console.log(document.getElementsByTagName("li")); //viejo
     console.log(document.getElementsByClassName("card")); //viejo
     console.log(document.getElementsByName("nombre")); //viejo
@@ -47,7 +47,8 @@
     console.log(document.querySelector("#menu li"));
     console.log(document.querySelectorAll("#menu li"));
     */
-    //Clase 63 -DOM: Atributos y Data-Attributes
+//Clase 63 -DOM: Atributos y Data-Attributes
+/*
     console.log(document.documentElement.lang);
     console.log(document.documentElement.getAttribute("lang"));
     console.log(document.querySelector(".link-dom").href);
@@ -77,4 +78,41 @@
     console.log($linkDOM.dataset.description);
     console.log($linkDOM.hasAttribute("data-id"));
     console.log($linkDOM.removeAttribute("data-id"));
-    console.log($linkDOM.hasAttribute("data-id"));
+    console.log($linkDOM.hasAttribute("data-id"));*/
+
+//Clase 64. DOM: Estilos y Variables CSS
+
+const $linkDOM = document.querySelector(".link-dom"); //es una buena practica ponerle $ a las variables del dom
+console.log($linkDOM.style);
+console.log($linkDOM.getAttribute("style")); //este es el q me gusta mas para ver propiedades
+console.log($linkDOM.style.backgroundColor); // muestre como estan solo los elementos modificados de css
+console.log($linkDOM.style.color);
+console.log(window.getComputedStyle($linkDOM)); //muestra como estan todos los todos los valores actuales de css
+console.log(window.getComputedStyle($linkDOM).getPropertyValue("color")); //muestra como estan todos los todos los colores actuales de css
+$linkDOM.style.setProperty("text-decoration", "none"); //setear q no se subraye el href
+$linkDOM.style.setProperty("display", "block"); //elemento de bloque que ocupa toda pantalla
+$linkDOM.style.width = "50%"; //ocupa la mitad del ancho de pantalla
+$linkDOM.style.textAlign = "center";
+$linkDOM.style.marginLeft = "auto"; //centrar
+$linkDOM.style.marginRight = "auto"; //centrar
+$linkDOM.style.padding = "1rem";
+$linkDOM.style.borderRadius = ".5rem";
+console.log($linkDOM.style);
+console.log($linkDOM.getAttribute("style")); //este es el q me gusta mas para ver propiedades
+console.log(window.getComputedStyle($linkDOM));
+
+//Variables CSS-Custom Properties CSS
+const $html = document.documentElement, //representa etiqueta html
+  $body = document.documentElement;
+
+let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color"), //accedo a propiedades de html - acceder a css siempre va con -- antes
+  varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+
+console.log(varDarkColor, varYellowColor);
+
+$body.style.backgroundColor = varDarkColor;
+$body.style.color = varYellowColor;
+
+$html.style.setProperty("--dark-color", "#000");
+varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+$body.style.setProperty("background-color", varDarkColor);
