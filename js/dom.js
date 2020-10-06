@@ -142,7 +142,8 @@ $card.classList.remove("opacity-80", "sepia");
 $card.classList.toggle("opacity-80", "sepia");
 */
 //Clase 66. DOM: Texto y HTML
-const $whatIsDOM = document.getElementById("que-es");
+
+/*const $whatIsDOM = document.getElementById("que-es");
 
 let text = `
     <p>
@@ -160,4 +161,19 @@ API para documentos HTML y XML.
 $whatIsDOM.textContent = text; // es el estandar - no interpreta las etiquetas html
 $whatIsDOM.innerHTML = text; // este si interpreta el html
 $whatIsDOM.outerHTML = text; //reemplaza todo complemtamente, no es un paraffaro dentro de otro. ahora es solo uno
+*/
+// Clase 67
+const $cards = document.querySelector(".cards");
 
+console.log($cards);
+//console.log($cards.childNodes); //children NODES hace referencia a los NODOS hijos
+console.log($cards.children); //children hace referencia a los hijos elementos
+console.log($cards.children[2]);
+console.log($cards.parentElement);
+console.log($cards.firstChild); //trae el salto de linea "enter" es el primer nodo
+console.log($cards.lastElementChild);
+console.log($cards.previousElementSibling); //trae el anterior de los hijos
+console.log($cards.nextElementSibling); //trae el siguiente , el salto de linea de los hijos
+console.log($cards.closest("div")); //metodo que busca el ancestro del tipo de selector que le indicamos
+console.log($cards.closest("body"));
+console.log($cards.children[3].closest("section"));
